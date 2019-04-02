@@ -1,3 +1,4 @@
+<import src="../../../wxParse/wxParse.wxml" />
 <view class='container'>
   <image class='head-image' src='{{postData.headImgSrc}}'></image>
   <image catchtap='onMusicTap' class='audio' src="{{isPlayingMusic?'/images/music/music-stop.png':'/images/music/music-start.png'}}"></image>
@@ -18,4 +19,5 @@
     <view class='horizon'></view>
   </view>
   <text class='detail'>{{postData.detail}}</text>
+    <template is="wxParse" data="{{wxParseData:article.nodes}}" />
 </view>

@@ -1,0 +1,7 @@
+<!--pages/posts/post-ceshi/post-ceshi.wxml-->
+<import src="../../../wxParse/wxParse.wxml" />
+<view class="container">
+  <view class='uinn'>
+    <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+  </view>
+</view>

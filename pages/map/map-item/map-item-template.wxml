@@ -1,0 +1,10 @@
+<template name="mapItem">
+<view class='hos-container'>
+  <text class='hos-name'>{{hosName}}</text>
+  <view class='hos-area'>
+    <text class='hos-detail'>{{hosDetail}}</text>
+    <image src="{{imgSrc}}" class='pic'></image>
+  </view>
+  <text class='distance'>{{distance}}</text>
+  </view>
+</template>

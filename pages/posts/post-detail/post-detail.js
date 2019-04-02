@@ -1,8 +1,10 @@
-var postsData = require('../../../data/posts-data.js')
+var postsData = require('../../../data/posts-data.js');
+const WxParse = require('../../../wxParse/wxParse.js');
 
 Page({
   data: {
-    isPlayingMusic: false
+    isPlayingMusic: false,
+    article: '<div style="text-align:center;"><img src="../../../images/hiv/h1.jpeg" alt="" /><img src="../../../images/hiv/h2.jpeg" alt="" /><img src="../../../images/hiv/h3.jpeg" alt="" /><img src="../../../images/hiv/h4.jpeg" alt="" /><img src="../../../images/hiv/h5.gif" alt="" /><img src="../../../images/hiv/h6.jpeg" alt="" /><img src="../../../images/hiv/h7.jpeg" alt="" /><img src="../../../images/hiv/h8.jpeg" alt="" /><img src="../../../images/hiv/h9.jpeg" alt="" /><img src="../../../images/hiv/h10.jpeg" alt="" /></div>',
   },
 
   onLoad: function(option) {
@@ -15,7 +17,10 @@ Page({
     this.setData({
       postData: postData
     })
-
+    var that = this;
+    if (postId == 0) {
+      WxParse.wxParse('article', 'html', that.data.article, that, 5);
+    }
     var postsCollected = wx.getStorageSync('posts_collected');
     if (postsCollected === undefined) {
       var postsCollected = {};
@@ -49,7 +54,7 @@ Page({
     if (isPlayingMusic) {
       wx.pauseBackgroundAudio();
       this.setData({
-        isPlayingMusic : false
+        isPlayingMusic: false
       })
     } else {
       wx.playBackgroundAudio({
@@ -58,7 +63,7 @@ Page({
         coverImg: postData.music.coverImg,
       })
       this.setData({
-        isPlayingMusic : true
+        isPlayingMusic: true
       })
     }
 

@@ -9,7 +9,8 @@ var local_database = [{
     headImgSrc: "/images/post/crab.png",
     author: "林白衣",
     dateTime: "24小时前",
-    detail: "这是一篇科普文|被传染艾滋后…… 这是一篇科普文|被传染艾滋后…… 这是一篇科普文|被传染艾滋后…… 这是一篇科普文|被传染艾滋后…… 这是一篇科普文|被传染艾滋后…… 这是一篇科普文|被传染艾滋后…… 这是一篇科普文|被传染艾滋后…… 这是一篇科普文|被传染艾滋后…… 这是一篇科普文|被传染艾滋后…… 这是一篇科普文|被传染艾滋后…… 这是一篇科普文|被传染艾滋后…… 这是一篇科普文|被传染艾滋后…… 这是一篇科普文|被传染艾滋后…… 这是一篇科普文|被传染艾滋后…… 这是一篇科普文|被传染艾滋后…… 这是一篇科普文|被传染艾滋后…… 这是一篇科普文|被传染艾滋后…… 这是一篇科普文|被传染艾滋后…… 这是一篇科普文|被传染艾滋后…… 这是一篇科普文|被传染艾滋后…… 这是一篇科普文|被传染艾滋后…… ",
+    detail: " ",
+    article: '<div style="text-align:center;">awsl<img src="../../../images/hiv/h1.jpeg" alt="" /><img src="../../../images/hiv/h2.jpeg" alt="" /><img src="../../../images/hiv/h3.jpeg" alt="" /><img src="../../../images/hiv/h4.jpeg" alt="" /><img src="../../../images/hiv/h5.gif" alt="" /><img src="../../../images/hiv/h6.jpeg" alt="" /><img src="../../../images/hiv/h7.jpeg" alt="" /><img src="../../../images/hiv/h8.jpeg" alt="" /><img src="../../../images/hiv/h9.jpeg" alt="" /><img src="../../../images/hiv/h10.jpeg" alt="" /></div>',
     postId: 0,
     music: {
       url: "http://music.163.com/song/media/outer/url?id=142604.mp3",
