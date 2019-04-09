@@ -1,84 +1,55 @@
 var mapData = require('../../data/map-data.js')
 Page({
   data: {
-    latitude: 23.099994,
-    longitude: 113.324520,
+    latitude: 30.3145799272,
+    longitude: 120.3433799744,
     markers: [{
       id: 1,
-      latitude: 23.099994,
-      longitude: 113.324520,
-      name: 'T.I.T 创意园'
+      latitude: 30.3145799272,
+      longitude: 120.3433799744,
     }],
     covers: [{
-      latitude: 23.099994,
-      longitude: 113.344520,
-      iconPath: '/images/location.png'
-    }, {
-      latitude: 23.099994,
-      longitude: 113.304520,
+      latitude: 30.3169879791,
+      longitude: 120.3470492363,
       iconPath: '/images/location.png'
     }]
   },
   onReady: function (e) {
     this.mapCtx = wx.createMapContext('myMap')
   },
-    onLoad: function() {
+  onLoad: function () {
+    
 
     // this.data.postList = postsData.postList
       this.setData({
         hosList: mapData.hosList
       });
   },
-  getCenterLocation: function () {
-    this.mapCtx.getCenterLocation({
-      success: function (res) {
-        console.log(res.longitude)
-        console.log(res.latitude)
-      }
-    })
-  },
-  moveToLocation: function () {
-    this.mapCtx.moveToLocation()
-  },
-  translateMarker: function () {
-    this.mapCtx.translateMarker({
-      markerId: 1,
-      autoRotate: true,
-      duration: 1000,
-      destination: {
-        latitude: 23.10229,
-        longitude: 113.3345211,
-      },
-      animationEnd() {
-        console.log('animation end')
+  intoMap: function () {
+    wx.getLocation({
+      type: 'gcj02', //返回可以用于wx.openLocation的经纬度
+      success: function (res) {  //因为这里得到的是你当前位置的经纬度
+        var latitude = res.latitude
+        var longitude = res.longitude
+        wx.openLocation({        //所以这里会显示你当前的位置
+          latitude: latitude,
+          longitude: longitude,
+         
+        })
       }
     })
   },
 
-  includePoints: function () {
-    this.mapCtx.includePoints({
-      padding: [10],
-      points: [{
-        latitude: 23.10229,
-        longitude: 113.3345211,
-      }, {
-        latitude: 23.00229,
-        longitude: 113.3345211,
-      }]
-    })
-  } ,
   onBindFocus: function (event) {
     this.setData({
       containerShow: false,
       searchPanelShow: true
     })
-
   }, onPostTap(event) {
     var hosId = event.currentTarget.dataset.hosid;
     wx.navigateTo({
-      url: '../posts/post-detail/post-detail?id=' + hosId
+      url: '../map/map-detail/map-detail'
     })
-
   }
 
 

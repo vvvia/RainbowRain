@@ -1,5 +1,4 @@
-@import "map-item/map-item-template.wxss";
-
+/* pages/map/map-detail/map-detail.wxss */
 .page-section-gap {
   box-sizing: border-box;
   padding: 0;
@@ -41,43 +40,4 @@
   font-size: 14px;
   color: #d1d1d1;
   margin-left: 20rpx;
-}
-
-
-
-.search-panel {
-  position: absolute;
-  top: 80rpx;
-}
-
-.xx-img {
-  height: 30rpx;
-  width: 30rpx;
-  margin: auto 0 auto 10rpx;
-}
-
-movable-view {
-  display: flex;
-  height: 500rpx;
-  width: 100%;
-}
-
-movable-area {
-  height: 550rpx;
-  width: 100%;
-  background-color: #fff;
-  overflow: hidden;
-  margin-bottom: 0;
-}
-
-.text {
-  font-size: 38rpx;
-  color: #a4a4a4;
-  margin: 10rpx 0 20rpx 10rpx;
-}
-
-.line {
-  width: 100%;
-  border-bottom: 1px solid #d6d6d6;
-  margin-top: 20px;
 }
