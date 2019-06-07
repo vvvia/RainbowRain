@@ -15,7 +15,7 @@ Page({
     covers: [{
       latitude: 30.3169879791,
       longitude: 120.3470492363,
-      iconPath: '/images/location.png'
+      iconPath: '/imgs/location.png'
     }],
     polyline: [{
       points: [{

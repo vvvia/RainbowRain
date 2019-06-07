@@ -1,9 +1,21 @@
 {
-  "pages": [  
+  "pages": [
+    "pages/home/home",
     "pages/map/map",
-    "pages/posts/posts",
+    "pages/location/location",
+    "pages/location-detail/location",
+    "pages/map/map-detail/map-detail",
+    "pages/category/category",
+    "pages/cart/cart",
+    "pages/my/my",
+    "pages/theme/theme",
+    "pages/product/product",
+    "pages/order/order",
+    "pages/pay-result/pay-result",
     "pages/posts/post-detail/post-detail",
-    "pages/map/map-detail/map-detail"
+    "pages/posts/post-detail/post-cartoon",
+    "pages/posts/post-detail/post-questions",
+    "pages/order/order-item"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -16,20 +28,43 @@
     }
   },
   "tabBar": {
-    "borderStyle": "white",
     "list": [
       {
-        "pagePath": "pages/posts/posts",
-        "text": "阅读",
-        "iconPath": "/images/tab/yuedu.png",
-        "selectedIconPath": "/images/tab/yuedu_hl.png"
+        "pagePath": "pages/home/home",
+        "iconPath": "imgs/tab/yuedu.png",
+        "selectedIconPath": "imgs/tab/yuedu_hl.png",
+        "text": "主页"
       },
       {
         "pagePath": "pages/map/map",
-        "text": "地图",
-        "iconPath": "/images/tab/ciwei.png",
-        "selectedIconPath": "/images/tab/ciwei_hl.png"
+        "text": "附近疾控",
+        "iconPath": "/imgs/tab/ciwei.png",
+        "selectedIconPath": "/imgs/tab/ciwei_hl.png"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "iconPath": "imgs/toolbar/cart.png",
+        "selectedIconPath": "imgs/toolbar/cart@selected.png",
+        "text": "购物车"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "iconPath": "imgs/toolbar/my.png",
+        "selectedIconPath": "imgs/toolbar/my@selected.png",
+        "text": "我的"
       }
-    ]
-  }
+    ],
+    "backgroundColor": "#F5F5F5",
+    "selectedColor": "#405f80",
+    "color": "#989898",
+    "borderStyle": "white",
+    "position": "bottom"
+  },
+  "networkTimeout": {
+    "request": 20000,
+    "connectSocket": 20000,
+    "uploadFile": 20000,
+    "downloadFile": 20000
+  },
+  "debug": true
 }

@@ -7,4 +7,15 @@
   </view>
   <text class='distance'>{{distance}}</text>
   </view>
+  <scroll-view class="scroll" scroll-y="true" wx:if="{{size > 0}}">
+        <view class="zan-panel">
+          <view class="zan-cell zan-cell--access" wx:for="{{list}}" wx:key="unique" data-id="{{item.id}}" bindtap="tapItem">
+            <view class="zan-cell__bd hos-name">
+              {{item.name}}
+              <view class="address hos-detail">{{item.briefAddr}}</view>
+            </view>
+            <view class="zan-cell__ft distance">相距{{item.distance}}米</view>
+          </view>
+        </view>
+      </scroll-view>
 </template>

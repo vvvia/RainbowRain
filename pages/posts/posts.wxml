@@ -1,18 +1,5 @@
 <import src="post-item/post-item-template.wxml" />
 <view>
-  <swiper indicator-dots='true' autoplay='false' interval='4000'>
-    <swiper-item>
-      <image src='/images/hiv/7.jpg'></image>
-      <text> xiwangni</text>
-    </swiper-item>
-    <swiper-item>
-      <image src='/images/hiv/5.jpg'></image>
-    </swiper-item>
-    <swiper-item>
-      <image src='/images/hiv/6.jpg'></image>
-    </swiper-item>
-  </swiper>
-
   <block wx:for="{{postList}}" wx:for-item="item" wx:for-index="idx">
     <!--//template-->
     <view catchtap="onPostTap" data-postId="{{item.postId}}">

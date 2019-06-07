@@ -1,10 +1,10 @@
-var postsData = require('../../../data/posts-data.js');
+var postsData = require('posts-data.js');
 const WxParse = require('../../../wxParse/wxParse.js');
 
 Page({
   data: {
     isPlayingMusic: false,
-    article: '<div style="text-align:center;"><img src="../../../images/hiv/h1.jpeg" alt="" /><img src="../../../images/hiv/h2.jpeg" alt="" /><img src="../../../images/hiv/h3.jpeg" alt="" /><img src="../../../images/hiv/h4.jpeg" alt="" /><img src="../../../images/hiv/h5.gif" alt="" /><img src="../../../images/hiv/h6.jpeg" alt="" /><img src="../../../images/hiv/h7.jpeg" alt="" /><img src="../../../images/hiv/h8.jpeg" alt="" /><img src="../../../images/hiv/h9.jpeg" alt="" /><img src="../../../images/hiv/h10.jpeg" alt="" /></div>',
+    article: '<div style="text-align:center;"><img src="http://39.108.162.197/text/images/hiv/h1.jpeg" alt="" /><img src="http://39.108.162.197/text/images/hiv/h2.jpeg" alt="" /><img src="http://39.108.162.197/text/images/hiv/h3.jpeg" alt="" /><img src="http://39.108.162.197/text/images/hiv/h4.jpeg" alt="" /><img src="http://39.108.162.197/text/images/hiv/h5.gif" alt="" /><img src="http://39.108.162.197/text/images/hiv/h6.jpeg" alt="" /><img src="http://39.108.162.197/text/images/hiv/h7.jpeg" alt="" /><img src="http://39.108.162.197/text/images/hiv/h8.jpeg" alt="" /><img src="http://39.108.162.197/text/images/hiv/h9.jpeg" alt="" /><img src="http://39.108.162.197/text/images/hiv/h10.jpeg" alt="" /></div>',
   },
 
   onLoad: function(option) {
@@ -47,26 +47,30 @@ Page({
     //this.getPostsCollectedAsy();
   },
 
-  onMusicTap: function(event) {
-    var isPlayingMusic = this.data.isPlayingMusic;
-    var currentPostId = this.data.postId;
+  onMusicTap: function (event) {
+    var currentPostId = this.data.currentPostId;
     var postData = postsData.postList[currentPostId];
+    var isPlayingMusic = this.data.isPlayingMusic;
     if (isPlayingMusic) {
       wx.pauseBackgroundAudio();
       this.setData({
         isPlayingMusic: false
       })
-    } else {
+      // app.globalData.g_currentMusicPostId = null;
+      app.globalData.g_isPlayingMusic = false;
+    }
+    else {
       wx.playBackgroundAudio({
-        url: postData.music.url,
+        dataUrl: postData.music.url,
         title: postData.music.title,
-        coverImg: postData.music.coverImg,
+        coverImgUrl: postData.music.coverImg,
       })
       this.setData({
         isPlayingMusic: true
       })
+      app.globalData.g_currentMusicPostId = this.data.currentPostId;
+      app.globalData.g_isPlayingMusic = true;
     }
-
   },
 
   getPostsCollectedAsy: function() {
@@ -111,7 +115,6 @@ Page({
   onShareTap: function(event) {
     var itemList = [
       "分享给微信好友",
-      "分享到朋友圈",
       "分享到QQ",
       "分享到微博"
     ]
@@ -123,7 +126,7 @@ Page({
         //res.tapIndex;//数组元素 从0开始
         wx.showModal({
           title: '用户' + itemList[res.tapIndex],
-          content: "用户是否取消？" + res.cancel + "现在好像不支持分享，什么时候支持呢？",
+          content: "分享功能尚未开发完成orz",
 
         })
       }

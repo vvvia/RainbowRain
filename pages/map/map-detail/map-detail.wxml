@@ -4,9 +4,9 @@
     <view class="search">
       <icon type="search" class="search-img" size="13" color="#405f80"></icon>
       <input type="text" placeholder="搜索" placeholder-class="placeholder" bindfocus="onBindFocus" bindconfirm="onBindConfirm" />
-      <image wx:if="{{searchPanelShow}}" src="/images/icon/xx.png" class="xx-img" catchtap="onCancelImgTap"></image>
+      <image wx:if="{{searchPanelShow}}" src="/imgs/icon/xx.png" class="xx-img" catchtap="onCancelImgTap"></image>
     </view>
-    <map id="myMap" style="width: 100%; height: 480px;" latitude="{{latitude}}" longitude="{{longitude}}" markers="{{markers}}" covers="{{covers}}" scale="16" polyline="{{polyline}}"></map>
+    <map id="myMap" style="width: 100%; height: 430px;" latitude="{{latitude}}" longitude="{{longitude}}" markers="{{markers}}" covers="{{covers}}" scale="16" polyline="{{polyline}}"></map>
   </view>
-  
+ 
 </view>

@@ -1,4 +1,4 @@
-var postsData = require('../../data/posts-data.js')
+var postsData = require('post-detail/posts-data.js')
 
 
 Page({
@@ -6,7 +6,7 @@ Page({
 
   },
 
-  onLoad: function() {
+  onLoad: function () {
 
     // this.data.postList = postsData.postList
     this.setData({
@@ -14,11 +14,12 @@ Page({
     });
   },
 
-  onPostTap(event){
-   var postId = event.currentTarget.dataset.postid;
-   wx.navigateTo({
-     url: 'post-detail/post-detail?id=' + postId
-   })
-   
-  }
+  onPostTap(event) {
+    var postId = event.currentTarget.dataset.postid;
+    wx.navigateTo({
+      url: 'post-detail/post-detail?id=' + postId
+    })
+
+  },
+  
 })

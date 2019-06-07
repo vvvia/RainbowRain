@@ -1,3 +1,4 @@
 {
-  "navigationBarTitleText": "map"
+  "navigationBarTitleText": "附近疾控",
+  "enablePullDownRefresh": false
 }

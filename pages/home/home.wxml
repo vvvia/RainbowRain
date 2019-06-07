@@ -1,0 +1,40 @@
+<import src="../tpls/products/products-tpl.wxml" />
+<import src="../posts/post-item/post-item-template.wxml" />
+<view class="container home-container" hidden="{{!loadingHidden}}">
+  <swiper indicator-dots="true" autoplay="true" class="swiper">
+    <block wx:for="{{bannerArr}}">
+      <swiper-item class="banner-item" data-id="{{item.key_word}}">
+        <image class="item-image" src="{{item.img.url}}" mode="aspectFill" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="home-main">
+    <!--主题精选-->
+    <view class="home-main-theme">
+      <view class="home-main-header">精选主题</view>
+      <view class="theme-box">
+        <block wx:for="{{themeArr}}">
+          <view wx:if="{{index==2}}" class="theme-item big" bindtap="onBigThemeTap" data-id="{{item.id}}" data-name="{{item.name}}">
+            <image src="{{item.topic_img.url}}"></image>
+          </view>
+          <view wx:else class="theme-item" bindtap="onThemesItemTap" data-id="{{item.id}}" data-name="{{item.name}}">
+            <image src="{{item.topic_img.url}}"></image>
+          </view>
+        </block>
+      </view>
+    </view>
+    <!--单品首发-->
+    
+      <view class="home-main-header">相关资讯</view>
+      <block wx:for="{{postList}}" wx:for-item="item" wx:for-index="idx">
+    <!--//template-->
+    <view catchtap="onPostTap" data-postId="{{item.postId}}">
+      <template is="postItem" data="{{...item}}" />
+      <!--//占位符 当加载完以后被取代 故不能在template加事件-->
+    </view>
+  </block>
+  </view>
+</view>
+<loading hidden="{{loadingHidden}}">
+  加载中...
+</loading>

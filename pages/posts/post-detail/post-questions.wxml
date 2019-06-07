@@ -1,0 +1,13 @@
+<import src="../../../wxParse/wxParse.wxml" />
+<view class='container' bindtouchstart="touchStart" bindtouchend="touchEnd">
+  <image class='head-image' src='http://39.108.162.197/text/images/hiv/6.jpg'></image>
+  <text class='title'>关于HIV,这些你都知道了吗？</text>
+  <view class='tool'>
+    <view class='circle-img'>
+      <image catchtap="onShareTap"  class="share-img" src="/imgs/icon/share.png"></image>
+    </view>
+    <view class='horizon'></view>
+  </view>
+  
+    <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+</view>

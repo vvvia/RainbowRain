@@ -1,8 +1,9 @@
 /**app.wxss**/
+@import "resources/lib/zanui/index.wxss";
 text{
     font-family: MicroSoft Yahei;
     font-size: 24rpx;
-    color: #666;
+    color: #white;
 }
 
 input{
